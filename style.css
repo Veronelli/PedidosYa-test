@@ -1,0 +1,245 @@
+*{
+
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+
+}
+body,html{
+
+    width: 100%;
+    height: 100%;
+
+}
+body{
+    display: flex;
+    align-items: center;
+
+}
+
+.muro{
+
+    width: 90%;
+    margin: auto;
+    height: 50vh;
+    background: rgb(255, 47, 82);
+    position: relative;
+    overflow: hidden;
+
+}
+.container{
+
+    position: relative;
+    z-index: 10;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    transform: scale(.5);
+    opacity: 0;
+    align-items: center;
+    flex-direction: column;
+    animation: swp .8s ease-in-out forwards;
+
+}
+
+.container>svg{
+
+    width: 50%;
+    filter: drop-shadow(10px 10px 10px rgba(0, 0, 0, 0.342));
+
+}
+
+.container>h2{
+
+    position: relative;
+    display: block;
+    margin-top: 1.5rem;
+    text-align: center;
+    padding: .2rem 0;
+    color: white;
+    border-radius:40px;
+    width: 60%;
+    backdrop-filter: blur(4px);
+
+}
+svg{
+
+    overflow: visible;
+
+}
+.st0{
+
+    transition: 1s;
+
+}
+.up{
+
+    transform: translateY(-.2rem);
+
+}
+.down{
+
+    transform: translateY(1rem);
+
+}
+.cube,
+.cube:after,
+.cube::before{
+
+    position: absolute;
+    border-bottom-left-radius: 40%;
+    animation: init .3s ease-in forwards;
+    box-shadow: -10px 10px 10px rgba(0, 0, 0, 0.157);
+    
+    right: -38rem;
+    top: -38rem;
+
+}
+
+
+.cube::before{
+
+    content: '';
+    display: block;
+    width: 550px;
+    height: 550px;
+    background: rgb(75, 43, 255);
+    z-index: 3;
+
+}
+.cube::after{
+
+    content: '';
+    display: block;
+    width: 450px;
+    height: 450px;
+    background: rgb(255, 43, 184);
+    z-index: 3;
+
+}
+.cube{
+
+    display: block;
+    width: 550px;
+    height: 550px;
+    background: rgb(149, 212, 47);
+    z-index: 5;
+    transform: rotateZ(20deg);
+
+
+}
+
+@keyframes init{
+
+    100%{
+
+        right: -5rem;
+        top: -5rem;
+
+    }
+
+}
+
+@keyframes swp{
+
+    70%{
+
+        transform: scale(1);
+        opacity: 1;
+
+    }
+    85%{
+
+        transform: scale(.9);
+
+    }
+    100%{
+
+        transform: scale(1);
+        opacity: 1;
+
+
+    }
+
+}
+@media(max-width:1000px){
+
+    .muro{
+
+
+    }
+
+    .cube{
+
+        width: 450px;
+        height: 450px;
+
+    }
+    .cube::before{
+
+        width: 550px;
+        height: 550px;
+
+    }
+    .cube::after{
+
+        width: 500px;
+        height: 500px;
+
+    }
+
+     @keyframes init{
+    100%{
+
+        right: -10rem;
+        top: -10rem;
+
+    } 
+
+}
+}
+@media(max-width:614px){
+
+    .container>svg{
+
+        width: 80%;
+
+    }
+    .container>h2{
+
+        font-size: 15px;
+
+    }
+
+    .cube{
+
+        width: 450px;
+        height: 450px;
+
+    }
+    .cube::before{
+
+        width: 550px;
+        height: 550px;
+
+    }
+    .cube::after{
+
+        width: 500px;
+        height: 500px;
+
+    }
+
+     @keyframes init{
+    100%{
+
+        right: -10rem;
+        top: -10rem;
+
+    } 
+
+}
+
+
+}
